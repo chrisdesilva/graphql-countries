@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
+import Loader from "react-loader-spinner";
 import CountryCard from "./CountryCard";
 
 function Countries() {
@@ -40,7 +41,16 @@ function Countries() {
   }, [bottom]);
 
   const { loading, error, data } = useQuery(ALL_COUNTRIES_QUERY);
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <Loader
+        className="loader"
+        type="Rings"
+        color="purple"
+        height={80}
+        width={80}
+      />
+    );
   if (error) return <p>Error fetching data. Please try again.</p>;
 
   return (

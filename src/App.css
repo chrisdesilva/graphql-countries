@@ -5,6 +5,17 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
+.loader {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  right: 50%;
+}
+
 .countries__container {
   display: flex;
   flex-direction: column;
@@ -58,8 +69,4 @@ body {
 
 .countries__card--content.currency {
   color: purple;
-}
-
-p {
-  margin: 0;
 }
